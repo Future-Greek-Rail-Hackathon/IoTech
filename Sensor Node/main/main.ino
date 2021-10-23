@@ -130,7 +130,7 @@ void loop()
    debugSerial.println(reading_piezo);
    //String lat="38.814447";
    //String lon="22.609966";
-   String payload=reading_temp+";"+reading_piezo+";"+String(lat[counter_lat_lon])+";"+String(lon[counter_lat_lon])+";"+String(state)+";";
+   String payload=reading_temp+";"+reading_piezo+";"+String(lat[counter_lat_lon],6)+";"+String(lon[counter_lat_lon],6)+";"+String(state)+";";
     debugSerial.println(payload);
     counter_lat_lon=counter_lat_lon+1;
     if(counter_lat_lon>54){
