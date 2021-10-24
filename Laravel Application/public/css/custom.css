@@ -1,0 +1,179 @@
+.login-page, .register-page{
+     background: rgb(0,176,255)!important;
+    background: linear-gradient(
+        128deg, rgba(0,176,255,1) 0%, rgba(21,175,215,1) 54%, rgba(255,255,255,0.00043767507002800965) 100%)!important;
+}
+.menu-logo {
+    max-width: 171px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+.btn-danger {
+    color: #fff;
+    background-color: rgb(0 43 62)!important;
+    border-color: rgb(0 43 62)!important;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 8%);
+}
+li.nav-item {
+    font-size: 18px;
+}
+.card {
+    box-shadow: 0 0 1px rgb(8 43 62), 0 1px 3px rgb(8 43 62)!important;
+}
+a.btn.btn-success {
+    background-color: rgb(0,176,255)!important;
+    border-color: rgb(0,176,255)!important;
+    font-size: 19px!important;
+}
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active {
+    color: #fff;
+    background-color: #36b0fb!important;
+}
+.card-header {
+    font-size: 21px;
+    background-color: #082b3e;
+    color: #FFF!important;
+}
+.searchable-field{
+    max-width: 250px;
+}
+.bg-blue{
+    background-color:rgb(0,176,255)!important;
+    color: #fff!important;
+}
+span.info-box-number {
+    font-size: 25px;
+}
+.leaflet-control-layers .leaflet-control-layers-list, .leaflet-control-layers-expanded .leaflet-control-layers-toggle {
+    display: block!important;
+}
+a.leaflet-control-layers-toggle ,.leaflet-control-layers-expanded.leaflet-control-layers.leaflet-control a.leaflet-control-layers-toggle{
+    display: none!important;
+}
+.sidebar-dark-primary {
+    background-color: rgb(0 43 62)!important;
+}
+.leaflet-control-layers label {
+    display: block;
+    margin: 0.5rem
+    !important;
+}
+.leaflet-control-layers.leaflet-control {
+    padding: 16px;
+    font-size: 17px;
+    font-weight: 400!important;
+}
+#rails-map{
+    height:70vh;
+}
+.aws-logo{
+    max-width:150px!important;
+    margin: 0 auto;
+
+}
+.ck-editor__editable,
+textarea {
+    min-height: 150px;
+}
+
+.datatable {
+    width: 100% !important;
+}
+
+table.dataTable tbody td.select-checkbox::before,
+table.dataTable tbody td.select-checkbox::after,
+table.dataTable tbody th.select-checkbox::before,
+table.dataTable tbody th.select-checkbox::after {
+    top: 50%;
+}
+
+.dataTables_length,
+.dataTables_filter,
+.dt-buttons {
+    margin-bottom: 0.333em;
+}
+
+.dt-buttons .btn {
+    margin-left: 0.333em;
+    border-radius: 0;
+}
+
+.table.datatable {
+    box-sizing: border-box;
+    border-collapse: collapse;
+}
+
+table.dataTable thead th {
+    border-bottom: 2px solid #dee2e6;
+}
+
+.dataTables_wrapper.no-footer .dataTables_scrollBody {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.select2 {
+    max-width: 100%;
+    width: 100%;
+}
+
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc {
+    background-image: none;
+}
+
+.btn-group-xs > .btn,
+.btn-xs {
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+.searchable-title {
+    font-weight: bold;
+}
+.select2-container--open {
+    z-index: 9999;
+}
+.searchable-fields {
+    padding-left:5px;
+}
+.searchable-link {
+    padding:0 5px 0 5px;
+}
+.searchable-link:hover   {
+    cursor: pointer;
+    background: #eaeaea;
+}
+.select2-results__option {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.form-group .required::after {
+    content: " *";
+    color: red;
+}
+
+.form-check.is-invalid ~ .invalid-feedback {
+    display: block;
+}
+
+.dataTables_length label select {
+    width: 65px!important;
+}
+
+div.dt-button-collection {
+    padding: 0;
+}
+
+.buttons-columnVisibility {
+    display: block;
+}
+
+.buttons-columnVisibility.active {
+    background-color: rgba(128, 128, 128, 0.1);
+    font-weight: bolder;
+}
