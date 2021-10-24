@@ -1,3 +1,7 @@
+Try it at https://rails.iotech.gr
+Username: admin@admin.com
+Password:password
+
 Θεματική
 Σιδηροδρομικές υποδομές και διαδικασίες
 
@@ -31,6 +35,3 @@ EETT για τις αδειοδοτήσεις κεραιών GSM-R, openrailway 
 
 Το δίκτυο LoRaWAN, IoT Core AWS, Σχεδίαση υψηλού επιπέδου.
 
-Try it at htts://rails.iotech.gr
-Username: admin@admin.com
-Password:password
