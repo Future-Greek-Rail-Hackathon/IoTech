@@ -126,7 +126,7 @@ void setupLoRaABP(){
 
 void setupLoRaOTAA(){
 
-  if (LoRaBee.initOTA(loraSerial, DevEUI, AppEUI, AppKey, true))
+  if (LoRaBee.initOTA(loraSerial, DevEUI, AppEUI, AppKey, false))
   {
     debugSerial.println("Network connection successful.");
   }
