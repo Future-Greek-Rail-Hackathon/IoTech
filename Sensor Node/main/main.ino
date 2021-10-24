@@ -215,6 +215,7 @@ String getPiezo(){
   // Read Piezo ADC value in, and convert it to a voltage
   int piezoADC = analogRead(A3);
   float piezoV = piezoADC/ 1023.0 * 5.0;
+  Serial.println("Piezo Voltage");
   Serial.println(piezoV); // Print the voltage.
   delay(250);
   return String(piezoV);
