@@ -108,7 +108,7 @@ void setupLoRa(){
   // For OTAA update the DEFAULT_FSB in the library
   // LoRaBee.setFsbChannels(1);
 
-  LoRaBee.setSpreadingFactor(11);
+  LoRaBee.setSpreadingFactor(9);
 }
 
 void setupLoRaABP(){  
@@ -215,7 +215,7 @@ String getPiezo(){
   // Read Piezo ADC value in, and convert it to a voltage
   int piezoADC = analogRead(A3);
   float piezoV = piezoADC/ 1023.0 * 5.0;
-  Serial.println("Piezo Voltage");
+  Serial.println("Piezo Voltage:");
   Serial.println(piezoV); // Print the voltage.
   delay(250);
   return String(piezoV);
