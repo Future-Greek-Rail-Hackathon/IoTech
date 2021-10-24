@@ -1,14 +1,11 @@
 #include <Sodaq_RN2483.h>
 #include "HX711.h"
-HX711 loadcell;
+HX711 scale;
 
 // 1. HX711 circuit wiring
 const int LOADCELL_DOUT_PIN = 2;
 const int LOADCELL_SCK_PIN = 3;
 
-// 2. Adjustment settings
-const long LOADCELL_OFFSET = 50682624;
-const long LOADCELL_DIVIDER = 5895655;
 
 
 
@@ -66,15 +63,13 @@ const uint8_t AppKey[16] =
 void setup()
 {
   delay(1000);
+  scale.begin(LOADCELL_DOUT_PIN, LOADCELL_SCK_PIN);
 
   while ((!debugSerial) && (millis() < 10000)){
     // Wait 10 seconds for debugSerial to open
   }
-  // 3. Initialize library for load
-  loadcell.begin(LOADCELL_DOUT_PIN, LOADCELL_SCK_PIN);
-  loadcell.set_scale(LOADCELL_DIVIDER);
-  loadcell.set_offset(LOADCELL_OFFSET);
-
+  
+  
   pinMode(LED_BUILTIN, OUTPUT);
   pinMode(BUTTON, INPUT_PULLUP);
    attachInterrupt(digitalPinToInterrupt(BUTTON), pressed, CHANGE);
@@ -147,9 +142,13 @@ void loop()
    debugSerial.println(reading_piezo);
    //String lat="38.814447";
    //String lon="22.609966";
-   Serial.print("Weight: ");
-  Serial.println(loadcell.get_units(10), 2);
-   String payload=reading_temp+";"+reading_piezo+";"+String(lat[counter_lat_lon],6)+";"+String(lon[counter_lat_lon],6)+";"+String(state)+";"+String(loadcell.get_units(10), 2)+";";
+    if (scale.is_ready()) {
+    delay(1);
+    }
+   long reading = scale.read();
+   debugSerial.print("HX711 reading: ");
+    debugSerial.println(reading);
+   String payload=reading_temp+";"+reading_piezo+";"+String(lat[counter_lat_lon],6)+";"+String(lon[counter_lat_lon],6)+";"+String(state)+";"+String(reading)+";";
     debugSerial.println(payload);
     counter_lat_lon=counter_lat_lon+1;
     if(counter_lat_lon>54){
