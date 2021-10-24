@@ -1,11 +1,13 @@
 #include <Sodaq_RN2483.h>
 #include "HX711.h"
 HX711 scale;
+#define USE_ABP         0
 
 // 1. HX711 circuit wiring
 const int LOADCELL_DOUT_PIN = 2;
 const int LOADCELL_SCK_PIN = 3;
-
+char dnbuf[16];
+char upbuf[16];
 
 
 
@@ -150,11 +152,18 @@ void loop()
     debugSerial.println(reading);
    String payload=reading_temp+";"+reading_piezo+";"+String(lat[counter_lat_lon],6)+";"+String(lon[counter_lat_lon],6)+";"+String(state)+";"+String(reading)+";";
     debugSerial.println(payload);
+    LoRaBee.getMacParam("dnctr", dnbuf, 16);
+    LoRaBee.getMacParam("upctr", upbuf, 16);
+   
+    debugSerial.print("Downlink frame counter: ");
+    debugSerial.println(dnbuf);
+    debugSerial.print("Uplink frame counter: ");
+    debugSerial.println(upbuf);
     counter_lat_lon=counter_lat_lon+1;
     if(counter_lat_lon>54){
       counter_lat_lon=0;
     }
-    switch (LoRaBee.send(1, (uint8_t*)payload.c_str(), payload.length()))
+    switch (LoRaBee.sendReqAck(1, (uint8_t*)payload.c_str(), payload.length(),5))
     {
     case NoError:
       debugSerial.println("Successful transmission.");
